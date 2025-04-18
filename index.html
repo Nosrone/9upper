@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瞎掰王 - 主頁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .grid button {
+            padding: 10px;
+            font-size: 16px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .grid button:hover {
+            background: #0056b3;
+        }
+        .grid button:visited {
+            background:  #001e3f;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>瞎掰王 v2 - 選擇題目</h1>
+        <div class="grid" id="question-grid"></div>
+    </div>
+
+    <script>
+        const totalQuestions = 60;
+        const grid = document.getElementById('question-grid');
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const button = document.createElement('button');
+            button.innerText = `題目 ${i}`;
+            button.onclick = () => {
+                window.location.href = `questions.html?num=${i}`;
+            };
+            grid.appendChild(button);
+        }
+    </script>
+
+</body>
+</html>
